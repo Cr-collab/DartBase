@@ -35,11 +35,28 @@ void main() {
   print("******** apredendo o objeto booleans ************");
   print("******** ************************* *************");
 
+  bool isGeek = true;
+  bool ageEqualHeight = (idade == altura);
 
-  bool isGeek =  true;
-  bool ageEqualHeight =  (idade == altura);
-
-  if(isGeek){
+  if (isGeek) {
     print("Sou muito Geek");
   }
+
+  print("******** ************************* *************");
+  print("******** apredendo o objeto String ************");
+  print("******** ************************* *************");
+
+  // atring tem que estar entre aspa
+  String nome =  'Cristiano';
+  String apelido = ' Cris';
+  String frase = 'Eu sou $apelido '
+  'mas meu nome é $nome, \n'
+  'eu me considero geek? $isGeek, '
+  'eu tenho $altura metros de altura e \n'
+  '$idade anos de idade' ;
+
+  print(nome + apelido);
+  print(nome);
+  print(frase);
+
 }
