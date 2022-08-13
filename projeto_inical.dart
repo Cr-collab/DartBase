@@ -83,4 +83,27 @@ void main() {
 
   print(frase2);
   listaNomes.forEach((e) => print(e));
+
+  bool maiorDeIdade;
+
+  if (idade >= 18) {
+    maiorDeIdade = true;
+  } else {
+    maiorDeIdade = false;
+  }
+
+  print("Eu sou maior de idade? $maiorDeIdade");
+
+  for(int i = 1; i < 5; i++){
+   print(i);
+  }
+
+ int energia = 100;
+ int i = 1;
+
+  while(energia != 0){
+    print('Mais uma Repetição $i');
+    i++;
+    energia =  energia - 10;
+  }
 }
