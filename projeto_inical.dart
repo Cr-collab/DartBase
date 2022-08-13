@@ -72,9 +72,11 @@ void main() {
   print(listaNomes.length);
 
   List<dynamic> cris = [22, 1.81, true, 'Cristiano Azevedo Costa', 'Cris'];
+
   print(cris[0]);
   print(cris[1]);
   print(cris[2]);
+
   String frase2 = 'Eu sou ${cris[4]} '
       'mas meu nome é ${cris[3]}, \n'
       'eu me considero geek? ${cris[2]}, '
@@ -94,16 +96,16 @@ void main() {
 
   print("Eu sou maior de idade? $maiorDeIdade");
 
-  for(int i = 1; i < 5; i++){
-   print(i);
+  for (int i = 1; i < 5; i++) {
+    print(i);
   }
 
- int energia = 100;
- int i = 1;
+  int energia = 100;
+  int i = 1;
 
-  while(energia != 0){
+  while (energia != 0) {
     print('Mais uma Repetição $i');
     i++;
-    energia =  energia - 10;
+    energia = energia - 10;
   }
 }
