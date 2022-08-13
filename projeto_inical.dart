@@ -28,6 +28,9 @@ void main() {
   double exponeciais = 780e6;
   // forma de reprendentar  780 milhões de form exponecial
 
+  var nome1 = 'aaaa';
+  // variavel ela tem capicidade de identicar o tipo;
+
   print(exponeciais);
   print(altura);
 
@@ -47,8 +50,12 @@ void main() {
   print("******** ************************* *************");
 
   // atring tem que estar entre aspa
-  String nome = 'Cristiano';
-  String apelido = ' Cris';
+  const String nome = 'Cristiano';
+
+  final String apelido = ' Cris';
+  // final ele pode ser vazio assim que receber ele, não mudaras mais.
+  // uma vez definido nunca mais mudara;
+
   String frase = 'Eu sou $apelido '
       'mas meu nome é $nome, \n'
       'eu me considero geek? $isGeek, '
@@ -60,9 +67,20 @@ void main() {
   print(frase);
 
   List<String> listaNomes = ['Ricarth', 'Natalia', 'Alex', 'Andriu', 'André'];
-  
+
   print(listaNomes[0]);
   print(listaNomes.length);
 
-  // listaNomes.map((e) => print(e));
+  List<dynamic> cris = [22, 1.81, true, 'Cristiano Azevedo Costa', 'Cris'];
+  print(cris[0]);
+  print(cris[1]);
+  print(cris[2]);
+  String frase2 = 'Eu sou ${cris[4]} '
+      'mas meu nome é ${cris[3]}, \n'
+      'eu me considero geek? ${cris[2]}, '
+      'eu tenho ${cris[1]} metros de altura e \n'
+      '${idade = 42} anos de idade';
+
+  print(frase2);
+  listaNomes.forEach((e) => print(e));
 }
