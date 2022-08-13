@@ -22,19 +22,24 @@ void main() {
   print("******** apredendo o objeto double ************");
   print("******** ************************* *************");
 
-  double altura =  1.81;
+  double altura = 1.81;
   // NÃO USAMOS VIRGULA PARA NUMEROS FRACIONADOS.
 
-  double exponeciais =  780e6;
+  double exponeciais = 780e6;
   // forma de reprendentar  780 milhões de form exponecial
 
   print(exponeciais);
   print(altura);
 
-    print("******** ************************* *************");
-  print("******** apredendo o objeto double ************");
+  print("******** ************************* *************");
+  print("******** apredendo o objeto booleans ************");
   print("******** ************************* *************");
 
 
+  bool isGeek =  true;
+  bool ageEqualHeight =  (idade == altura);
 
+  if(isGeek){
+    print("Sou muito Geek");
+  }
 }
