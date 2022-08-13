@@ -47,16 +47,22 @@ void main() {
   print("******** ************************* *************");
 
   // atring tem que estar entre aspa
-  String nome =  'Cristiano';
+  String nome = 'Cristiano';
   String apelido = ' Cris';
   String frase = 'Eu sou $apelido '
-  'mas meu nome é $nome, \n'
-  'eu me considero geek? $isGeek, '
-  'eu tenho $altura metros de altura e \n'
-  '$idade anos de idade' ;
+      'mas meu nome é $nome, \n'
+      'eu me considero geek? $isGeek, '
+      'eu tenho $altura metros de altura e \n'
+      '$idade anos de idade';
 
   print(nome + apelido);
   print(nome);
   print(frase);
 
+  List<String> listaNomes = ['Ricarth', 'Natalia', 'Alex', 'Andriu', 'André'];
+  
+  print(listaNomes[0]);
+  print(listaNomes.length);
+
+  // listaNomes.map((e) => print(e));
 }
