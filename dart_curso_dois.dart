@@ -8,6 +8,15 @@ void main() {
 
   print(estaMadura);
   mostrarMadura(nome, diasDesdesAColheita, cor: cor, sabor: sabor);
+  print(funcQuantosDiasMadura(diasDesdesAColheita));
+}
+
+
+int funcQuantosDiasMadura(int dias){
+   int diasParaMadura = 30;
+   int  quantosDiasFaltam = dias - diasParaMadura;
+
+   return quantosDiasFaltam;
 }
 
 // Posicionais Obrigatorios
@@ -34,3 +43,7 @@ bool funcEstaMadura(int dias) {
     return false;
   }
 }
+
+
+
+
