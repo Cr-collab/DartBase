@@ -2,12 +2,12 @@ void main() {
   String nome = "Laranja";
   double peso = 100.2;
   String cor = "Verde e Amarela";
-  String sabor = "KDoce e cítrica";
+  String sabor = "Doce e cítrica";
   int diasDesdesAColheita = 40;
   bool estaMadura = funcEstaMadura(diasDesdesAColheita);
 
   print(estaMadura);
-  mostrarMadura(nome, diasDesdesAColheita, cor: cor);
+  mostrarMadura(nome, diasDesdesAColheita, cor: cor, sabor: sabor);
 }
 
 // Posicionais Obrigatorios
@@ -15,7 +15,7 @@ void main() {
 // Parametros padrões
 // Modificador  Required
 
-mostrarMadura(String nome, int dias, { String? cor }) {
+mostrarMadura(String nome, int dias, { String? cor =  "roxo", required String sabor }) {
   if (dias >= 30) {
     print("A $nome está madura");
   } else {
