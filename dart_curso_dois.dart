@@ -17,8 +17,7 @@ void main() {
       nome: nome,
       peso: peso);
 
-
-
+  fruta01.estaMadura(20);
 }
 
 int funcQuantosDiasMadura(int dias) {
@@ -69,4 +68,30 @@ class Frutas {
       required this.diasDesdeColheita,
       required this.sabor,
       this.isMadura});
+
+  estaMadura(int diasParaMadura) {
+    this.isMadura = this.diasDesdeColheita >= diasParaMadura;
+    print(
+        "A sua ${this.nome} foi colhida ${this.diasDesdeColheita} dias para comer, e precisa de ${diasParaMadura} para comer, então ela esta madura ? ${this.isMadura}  ");
+  }
+
+}
+
+
+
+class Alimento {
+  String nome;
+  double peso;
+  String cor;
+  
+  Alimento({required this.nome, required this.peso, required this.cor});
+}
+
+
+class Legumes {
+  String nome;
+  String peso;
+  String cor;
+
+  Legumes({required this.nome, required this.peso, required this.cor});
 }
