@@ -1,4 +1,3 @@
-
 void main() {
   String nome = "Laranja";
   double peso = 100.2;
@@ -172,7 +171,7 @@ class Citricas extends Frutas {
   }
 }
 
-class Nozes extends Frutas {
+class Nozes extends Frutas implements Bolo {
   double porcentagemDeOlheoNatural;
 
   Nozes(
@@ -190,4 +189,31 @@ class Nozes extends Frutas {
             isMadura: isMadura,
             diasDesdeColheita: diasDesdeColheita,
             sabor: sabor);
+
+  @override
+  void assar() {
+    // colocar mais tempo
+    print('Colocar o forno');
+  }
+
+  @override
+  void fazerMassa() {
+    // Ve se o alimento esta cozido ou cru;
+    print('Misturar a Fruta com Fasrinha , açucar');
+  }
+
+  @override
+  void separarIngredients() {
+    // fazer uma papa legume
+    print('catar a fruta');
+  }
+}
+
+abstract class Bolo {
+  //separo os ingredientes
+  void separarIngredients();
+  // faço a massa
+  void fazerMassa();
+  // assar
+  void assar();
 }
