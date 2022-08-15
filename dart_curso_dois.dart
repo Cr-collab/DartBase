@@ -74,19 +74,20 @@ class Frutas {
     print(
         "A sua ${this.nome} foi colhida ${this.diasDesdeColheita} dias para comer, e precisa de ${diasParaMadura} para comer, então ela esta madura ? ${this.isMadura}  ");
   }
-
 }
-
-
 
 class Alimento {
   String nome;
   double peso;
   String cor;
-  
-  Alimento({required this.nome, required this.peso, required this.cor});
-}
+  bool? isPrecisaCozinhar;
 
+  Alimento(
+      {required this.nome,
+      required this.peso,
+      required this.cor,
+      this.isPrecisaCozinhar});
+}
 
 class Legumes {
   String nome;
@@ -94,4 +95,37 @@ class Legumes {
   String cor;
 
   Legumes({required this.nome, required this.peso, required this.cor});
+}
+
+class Citricas {
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double nivelDeAzedo;
+
+  Citricas(
+      {required this.nome,
+      required this.peso,
+      required this.cor,
+      required this.diasDesdeColheita,
+      this.isMadura,
+      required this.nivelDeAzedo});
+}
+
+class Nozes {
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double porcentagemDeOlheoNatural;
+  Nozes(
+      {required this.nome,
+      required this.peso,
+      required this.cor,
+      required this.diasDesdeColheita,
+      this.isMadura,
+      required this.porcentagemDeOlheoNatural});
 }
