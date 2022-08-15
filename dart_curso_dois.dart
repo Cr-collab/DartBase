@@ -1,3 +1,4 @@
+
 void main() {
   String nome = "Laranja";
   double peso = 100.2;
@@ -18,6 +19,37 @@ void main() {
       peso: peso);
 
   fruta01.estaMadura(20);
+
+  Legumes mandioca = Legumes(
+      nome: 'Macxeira', peso: 1200, cor: 'Marron', isPrecisaCozinhar: true);
+
+  Frutas mamao = Frutas(
+      cor: 'Amarelo',
+      diasDesdeColheita: 20,
+      nome: 'mamão',
+      peso: 200,
+      sabor: 'doce');
+
+  Nozes macadamia = Nozes(
+      nome: 'macadâmia',
+      peso: 100,
+      cor: 'Verde',
+      sabor: 'Azedo',
+      diasDesdeColheita: 5,
+      porcentagemDeOlheoNatural: 9);
+
+  Citricas limao = Citricas(
+      nome: 'Limão',
+      peso: 100,
+      cor: 'Verde',
+      sabor: 'Azedo',
+      diasDesdeColheita: 20,
+      nivelDeAzedo: 9);
+
+  mandioca.printAlimento();
+  macadamia.printAlimento();
+  limao.printAlimento();
+  mamao.printAlimento();
 }
 
 int funcQuantosDiasMadura(int dias) {
@@ -113,35 +145,49 @@ class Legumes extends Alimento {
   }
 }
 
-class Citricas {
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Citricas extends Frutas {
   double nivelDeAzedo;
 
   Citricas(
-      {required this.nome,
-      required this.peso,
-      required this.cor,
-      required this.diasDesdeColheita,
-      this.isMadura,
-      required this.nivelDeAzedo});
+      {required String nome,
+      required double peso,
+      required String cor,
+      required int diasDesdeColheita,
+      required String sabor,
+      required this.nivelDeAzedo})
+      : super(
+          cor: cor,
+          nome: nome,
+          peso: peso,
+          sabor: sabor,
+          diasDesdeColheita: diasDesdeColheita,
+        );
+
+  void existeRefir(bool existe) {
+    if (existe) {
+      print('Existe Refri de $nome');
+    } else {
+      print('Não existe Refri de $nome');
+    }
+  }
 }
 
-class Nozes {
-  String nome;
-  double peso;
-  String cor;
-  int diasDesdeColheita;
-  bool? isMadura;
+class Nozes extends Frutas {
   double porcentagemDeOlheoNatural;
+
   Nozes(
-      {required this.nome,
-      required this.peso,
-      required this.cor,
-      required this.diasDesdeColheita,
-      this.isMadura,
-      required this.porcentagemDeOlheoNatural});
+      {required String nome,
+      required double peso,
+      required String cor,
+      required int diasDesdeColheita,
+      required String sabor,
+      bool? isMadura,
+      required this.porcentagemDeOlheoNatural})
+      : super(
+            cor: cor,
+            nome: nome,
+            peso: peso,
+            isMadura: isMadura,
+            diasDesdeColheita: diasDesdeColheita,
+            sabor: sabor);
 }
