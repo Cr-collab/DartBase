@@ -2,6 +2,39 @@ void main() {
   escolherMeioTransporte(0);
   escolherMeioTransporteEnums(Transporte.andando);
   escolherMeioTransporteSwitchCase(Transporte.andando);
+
+  List<String> destinos = [];
+  String destino = "Rio de janeiro";
+  destinos.add(destino);
+  print(destinos);
+
+  Set<String> registrarVisitados = <String>{};
+  registrarVisitados = registrarDestinos(destino, registrarVisitados);
+  print(registrarVisitados);
+
+  destino = "São Paulo";
+  registrarVisitados = registrarDestinos(destino, registrarVisitados);
+  print(registrarVisitados);
+
+  print(registrarVisitados.first);
+  print(registrarVisitados.last);
+  print(registrarVisitados.isEmpty);
+  print(registrarVisitados.isNotEmpty);
+
+  print(registrarVisitados.contains("Rio de Janeiro"));
+  print(registrarVisitados.elementAt(1));
+  registrarVisitados
+      .forEach((element) => print(element + " estamos rodando for each"));
+
+  Map<String, dynamic> registrarPrecos = {};
+
+  registrarPrecos["Rio de Janeiro"] = 1500;
+  registrarPrecos["São Paulo"] = 1500;
+
+  print(registrarPrecos);
+  print(registrarPrecos['Rio de Janeiro']);
+
+  registrarPrecos.remove('São Paulo');
 }
 
 void escolherMeioTransporte(int locomocao) {
@@ -38,6 +71,11 @@ void escolherMeioTransporteEnums(Transporte locomocao) {
   } else {
     print("Vou  para aventura");
   }
+}
+
+Set<String> registrarDestinos(String destino, Set<String> banco) {
+  banco.add(destino);
+  return banco;
 }
 
 enum Transporte { carro, bike, andando, aviao, pattins, trem }
