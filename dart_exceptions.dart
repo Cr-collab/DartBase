@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 
@@ -35,15 +37,35 @@ void main() {
 
 void functionOne() {
   print("Started F01");
-  functionTwo();
+  try {
+    functionTwo();
+
+  } catch (exception, stackTrace) {
+    print(exception.runtimeType);
+    print(stackTrace);
+    rethrow;
+  } finally {
+    print("Chegou no Finally");
+  }
+  // } on FormatException catch (e) {
+  //   print(e.message);
+  //   print(e.offset);
+  //   print(e.source);
+  //   print(e.toString());
+  // } on HttpException catch (e) {
+  //   print(e.message);
+  // } on IOException catch (e) {
+  //   print(e.toString());
+  // }
   print("Finished F01");
 }
 
 void functionTwo() {
-   print("Started F02");
-   for(int i = 1; i <=  5; i++){
-      print(i);
-   }
+  print("Started F02");
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+    double amount = double.parse("Not a number");
+  }
   print("Finished F02");
 }
 
