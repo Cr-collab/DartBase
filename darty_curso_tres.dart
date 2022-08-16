@@ -35,6 +35,14 @@ void main() {
   print(registrarPrecos['Rio de Janeiro']);
 
   registrarPrecos.remove('São Paulo');
+
+  dynamic meuNumero = 7.1;
+  // meuNumero = "String Qualquer" não pode ;
+  print(meuNumero.runtimeType);
+  Viagem viagemHoje = Viagem();
+  viagemHoje.dinheiro = 10;
+  
+  Viagem.codigoTrabalho;
 }
 
 void escolherMeioTransporte(int locomocao) {
@@ -79,3 +87,8 @@ Set<String> registrarDestinos(String destino, Set<String> banco) {
 }
 
 enum Transporte { carro, bike, andando, aviao, pattins, trem }
+
+class Viagem {
+  static String codigoTrabalho = "ASjdjjsd";
+  double dinheiro = 0;
+}
