@@ -1,6 +1,7 @@
 void main() {
   escolherMeioTransporte(0);
   escolherMeioTransporteEnums(Transporte.andando);
+  escolherMeioTransporteSwitchCase(Transporte.andando);
 }
 
 void escolherMeioTransporte(int locomocao) {
@@ -13,7 +14,23 @@ void escolherMeioTransporte(int locomocao) {
   }
 }
 
-void escolherMeioTransporteEnums(Transporte locomocao){
+void escolherMeioTransporteSwitchCase(Transporte locomocao) {
+  switch (locomocao) {
+    case Transporte.carro:
+      print("Vou de carro para aventura");
+      break;
+    case Transporte.bike:
+      print("Vou de bike para aventura");
+      break;
+    case Transporte.aviao:
+      print("Vou de avião para aventura");
+      break;
+    default:
+      print("Vou  para aventura");
+  }
+}
+
+void escolherMeioTransporteEnums(Transporte locomocao) {
   if (locomocao == Transporte.carro) {
     print("Vou de carro para aventura");
   } else if (locomocao == Transporte.bike) {
@@ -23,11 +40,4 @@ void escolherMeioTransporteEnums(Transporte locomocao){
   }
 }
 
-enum Transporte {
-  carro,
-  bike,
-  andando,
-  aviao,
-  pattins,
-  trem
-}
+enum Transporte { carro, bike, andando, aviao, pattins, trem }
