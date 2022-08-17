@@ -1,75 +1,40 @@
-import 'dart:io';
-
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
-
-// void main() {
-//   // Criando o banco
-//   BankController bankController = BankController();
-
-//   // Adicionando contas
-//   bankController.addAccount(
-//       id: "Ricarth",
-//       account:
-//           Account(name: "Ricarth Lima", balance: 400, isAuthenticated: true));
-
-//   bankController.addAccount(
-//       id: "Kako",
-//       account:
-//           Account(name: "Caio Couto", balance: 600, isAuthenticated: true));
-
-//   // Fazendo transferência
-//   bool result = bankController.makeTransfer(
-//       idSender: "Kako", idReceiver: "Ricarth", amount: 700);
-
-//   // Observando resultado
-//   print(result);
-// }
+import './errors/bank_controller_exceptions.dart';
 
 void main() {
-  //  double amount = double.parse("25,33");
-  // recursiveFunc(1);
+  assert(false, 'Levanteir o assert');
 
-  print("Started");
-  functionOne();
-  print("Finished");
-}
+  // Criando o banco
+  BankController bankController = BankController();
 
-void functionOne() {
-  print("Started F01");
+  // Adicionando contas
+  bankController.addAccount(
+      id: "Ricarth",
+      account:
+          Account(name: "Ricarth Lima", balance: 400, isAuthenticated: true));
+
+  bankController.addAccount(
+      id: "Kako",
+      account:
+          Account(name: "Caio Couto", balance: 600, isAuthenticated: true));
+
+  // Fazendo transferência
   try {
-    functionTwo();
-
-  } catch (exception, stackTrace) {
-    print(exception.runtimeType);
-    print(stackTrace);
-    rethrow;
-  } finally {
-    print("Chegou no Finally");
+    bool result = bankController.makeTransfer(
+        idSender: "Kako", idReceiver: "Ricarth", amount: 600);
+    print(result);
+  } on SenderIdInvalidException catch (e) {
+    print(e.toString());
+  } on ReceiverIdInvalidException catch (e) {
+    print(e.toString());
+  } on SenderNotAuthenticatedException catch (e) {
+    print(e.toString());
+  } on SenderBalanceLowerTheAmountException catch (e) {
+    print(e.toString());
+  } on Exception {
+    print("Algo deu errado");
   }
-  // } on FormatException catch (e) {
-  //   print(e.message);
-  //   print(e.offset);
-  //   print(e.source);
-  //   print(e.toString());
-  // } on HttpException catch (e) {
-  //   print(e.message);
-  // } on IOException catch (e) {
-  //   print(e.toString());
-  // }
-  print("Finished F01");
-}
 
-void functionTwo() {
-  print("Started F02");
-  for (int i = 1; i <= 5; i++) {
-    print(i);
-    double amount = double.parse("Not a number");
-  }
-  print("Finished F02");
-}
-
-recursiveFunc(int count) {
-  print(count);
-  recursiveFunc(count + 1);
+  // Observando resultado
 }
